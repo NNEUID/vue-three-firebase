@@ -7,28 +7,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue Three CDN</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    .box {
+      width: 400px;
+      text-align: center;
+      background-color: #ddd;
+      padding: 100px 0;
+      margin: 20px;
+      display: inline-block;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
     <h1>{{message}}</h1>
 
-    <!-- Events -->
-    <p>{{title}} - {{author}} - {{pages}}</p>
-    <button @click="pages--">Decrease Pages</button>
-    <button @click="pages++">Increase Pages</button>
-    <div @click="changeTitle()">Change Title</div>
+    
+    <!-- Mouse Events -->
+    <hr>
+    <h2 style="color: red;">Mouse Events</h2>
+    <hr>
 
-    <!-- Conditional Rendering -->
-    <hr>
-    <h2 style="color: red;">Conditional Rendering</h2>
-    <div v-if="showBooks">
-      <p>{{title}} - {{author}} - {{pages}}</p>
-    </div>
-    <button @click="toggleShowBooks">{{showBooks? 'Hide' : 'Show'}} Books</button>
-    <p style="color: skyblue;" v-show="showBooks">Currenlty showing books</p>
-    <hr>
-    <h2 style="color: red;">Conditional Rendering</h2>
+    <div class="box" @mouseover="handleEvent($event,'Vue is Awesome:)')">mouseover (enter)</div>
+    <div class="box" @mouseleave="handleEvent">mouseleave</div>
+    <div class="box" @dblclick="handleEvent">double click</div>
+    <div class="box" @mousemove="handleMousemove">x:{{x}} y:{{y}}</div>
+
   </div>
 
   <script src="app.js"></script>

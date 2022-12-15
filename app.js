@@ -16,14 +16,20 @@ const app = Vue.createApp({
       title: 'God of Design',
       author: 'Noel Emmanuel.',
       pages: 256,
+      x: 0,
+      y: 0
     }
   },
   methods: {
-    changeTitle() {
-      this.title = 'The MAYA Principle'
+    handleEvent(e, arg) {
+      console.log(e, e.type);
+      if(arg) {
+        console.log(arg);
+      }
     },
-    toggleShowBooks() {
-      this.showBooks = !this.showBooks
+    handleMousemove(e) {
+      this.x = e.offsetX
+      this.y = e.offsetY
     }
   }
 })
