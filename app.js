@@ -11,6 +11,7 @@
 const app = Vue.createApp({
   data() {
     return {
+      showBooks: true,
       message: 'Hello Vue :)',
       title: 'God of Design',
       author: 'Noel Emmanuel.',
@@ -20,6 +21,9 @@ const app = Vue.createApp({
   methods: {
     changeTitle() {
       this.title = 'The MAYA Principle'
+    },
+    toggleShowBooks() {
+      this.showBooks = !this.showBooks
     }
   }
 })
