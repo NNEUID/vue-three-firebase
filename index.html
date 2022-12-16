@@ -24,6 +24,8 @@
     <h1>{{message}}</h1>
 
     
+    <!-- Attribute Binding -->
+    <a :href="url" target="blank">Visist Noel's site</a>
     <!-- Mouse Events -->
     <hr>
     <h2 style="color: red;">Lists with v-for</h2>
@@ -32,6 +34,7 @@
     <div v-if="showBooks">
       <ul>
         <li v-for="(book, i) in books" :key="i">
+          <img :src="book.cover" :alt="book.title">
           <h3>{{book.title}}</h3>
            <p>{{book.author}}</p>
           </li>
