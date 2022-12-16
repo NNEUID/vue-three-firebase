@@ -18,32 +18,31 @@ const app = Vue.createApp({
         {
           title: 'name of the wind',
           author: 'Patrick Rothfuss',
-          cover: 'https://raw.githubusercontent.com/iamshaunjp/Vue-3-Firebase/lesson-13/assets/1.jpg'
+          cover: 'https://raw.githubusercontent.com/iamshaunjp/Vue-3-Firebase/lesson-13/assets/1.jpg',
+          isFav: true
         },
         {
           title: 'the way of kings',
           author: 'Brandon Sanderson',
-          cover: 'https://raw.githubusercontent.com/iamshaunjp/Vue-3-Firebase/lesson-13/assets/2.jpg'
+          cover: 'https://raw.githubusercontent.com/iamshaunjp/Vue-3-Firebase/lesson-13/assets/2.jpg',
+          isFav: false
         },
         {
           title: 'The final empire',
           author: 'Brandon Sanderson',
-          cover: 'https://raw.githubusercontent.com/iamshaunjp/Vue-3-Firebase/lesson-13/assets/3.jpg'
+          cover: 'https://raw.githubusercontent.com/iamshaunjp/Vue-3-Firebase/lesson-13/assets/3.jpg',
+          isFav: true
         }
       ],
     }
   },
   methods: {
-    handleEvent(e, arg) {
-      console.log(e, e.type);
-      if(arg) {
-        console.log(arg);
-      }
+    toggleShowBooks(book) {
+      this.showBooks = !this.showBooks
     },
-    handleMousemove(e) {
-      this.x = e.offsetX
-      this.y = e.offsetY
-    }
+    toggleFav(book) {
+      book.isFav = !book.isFav
+    },
   }
 })
 

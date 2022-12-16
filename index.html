@@ -8,13 +8,28 @@
   <title>Vue Three CDN</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <style>
-    .box {
-      width: 400px;
-      text-align: center;
-      background-color: #ddd;
-      padding: 100px 0;
-      margin: 20px;
-      display: inline-block;
+    body{
+      background: #eee;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    p, h3, ul{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style-type: none;
+      background: #fff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    li.fav{
+      background: #ff9ed2;
+      color: white;
     }
   </style>
 </head>
@@ -22,18 +37,9 @@
 <body>
   <div id="app">
     <h1>{{message}}</h1>
-
-    
-    <!-- Attribute Binding -->
-    <a :href="url" target="blank">Visist Noel's site</a>
-    <!-- Mouse Events -->
-    <hr>
-    <h2 style="color: red;">Lists with v-for</h2>
-    <hr>
-
     <div v-if="showBooks">
       <ul>
-        <li v-for="(book, i) in books" :key="i">
+        <li v-for="(book, i) in books" :key="i" :class="{ fav: book.isFav }" @click="toggleFav(book)">
           <img :src="book.cover" :alt="book.title">
           <h3>{{book.title}}</h3>
            <p>{{book.author}}</p>
