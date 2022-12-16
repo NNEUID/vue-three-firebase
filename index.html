@@ -26,13 +26,17 @@
     
     <!-- Mouse Events -->
     <hr>
-    <h2 style="color: red;">Mouse Events</h2>
+    <h2 style="color: red;">Lists with v-for</h2>
     <hr>
 
-    <div class="box" @mouseover="handleEvent($event,'Vue is Awesome:)')">mouseover (enter)</div>
-    <div class="box" @mouseleave="handleEvent">mouseleave</div>
-    <div class="box" @dblclick="handleEvent">double click</div>
-    <div class="box" @mousemove="handleMousemove">x:{{x}} y:{{y}}</div>
+    <div v-if="showBooks">
+      <ul>
+        <li v-for="(book, i) in books" :key="i">
+          <h3>{{book.title}}</h3>
+           <p>{{book.author}}</p>
+          </li>
+      </ul>
+    </div>
 
   </div>
 

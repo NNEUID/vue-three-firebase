@@ -13,11 +13,20 @@ const app = Vue.createApp({
     return {
       showBooks: true,
       message: 'Hello Vue :)',
-      title: 'God of Design',
-      author: 'Noel Emmanuel.',
-      pages: 256,
-      x: 0,
-      y: 0
+      books: [
+        {
+          title: 'name of the wind',
+          author: 'Patrick Rothfuss'
+        },
+        {
+          title: 'the way of kings',
+          author: 'Brandon Sanderson'
+        },
+        {
+          title: 'The final empire',
+          author: 'Brandon Sanderson'
+        }
+      ],
     }
   },
   methods: {
